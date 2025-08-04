@@ -1,0 +1,78 @@
+<div class="font-sans">
+    <div
+      class="relative min-h-screen flex flex-col sm:justify-center items-center bg-gray-100 p-28"
+    >
+      <div class="relative lg:max-w-5xl w-full">
+        <div
+          class="card bg-pink-200 shadow-lg w-full h-full rounded-3xl absolute transform -rotate-6"
+        ></div>
+        <div
+          class="card bg-pink-700 shadow-lg w-full h-full rounded-3xl absolute transform rotate-6"
+        ></div>
+        <div class="relative w-full rounded-3xl px-6 py-4 bg-gray-100 shadow-md">
+          <h1 class="block mt-3 text-2xl text-gray-700 text-center">
+            Pay Now :-
+          </h1>
+          <form  class="mt-10" [formGroup]="paymentForm" (ngSubmit)="submitForm()">
+            <div class="mt-7">
+              <label for="details" class="block text-lg font-medium text-black"
+                >Details :</label
+              >
+              <input
+                formControlName="details"
+                type="text"
+                id="details"
+                placeholder="enter your details..."
+                class="mt-1 block w-full border-none bg-gray-100 h-11 rounded-xl shadow-lg focus:ring-0"
+              />
+            
+            
+            
+            </div>
+            <div class="mt-7">
+              <label for="phone" class="block text-lg font-medium text-black"
+                >Phone :</label
+              >
+              <input
+                formControlName="phone"
+                type="tel"
+                id="phone"
+                placeholder="enter your phone..."
+                class="mt-1 block w-full border-none bg-gray-100 h-11 rounded-xl shadow-lg focus:ring-0"
+              />
+            
+            
+            
+            </div>
+            <div class="mt-7">
+              <label for="city" class="block text-lg font-medium text-black"
+                >City :</label
+              >
+              <input
+                formControlName="city"
+                type="text"
+                id="city"
+                placeholder="enter your city..."
+                class="mt-1 block w-full border-none bg-gray-100 h-11 rounded-xl shadow-lg focus:ring-0"
+              />
+            
+            
+            
+            </div>
+
+            <div class="mt-7">
+              <button
+                 type="submit"
+                [disabled]="paymentForm.invalid"
+                class="bg-pink-600 mx-auto py-3 px-2 block rounded-xl text-white shadow-xl hover:shadow-inner focus:outline-none transition duration-500 ease-in-out transform hover:-translate-x hover:scale-105 disabled:bg-pink-200 disabled:cursor-default"
+              >
+               Submit
+                
+              </button>
+            </div>
+          </form>
+        </div>
+      </div>
+    </div>
+  </div>
+  

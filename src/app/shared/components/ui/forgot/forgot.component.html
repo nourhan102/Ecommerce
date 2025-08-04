@@ -1,0 +1,126 @@
+<div class="font-sans">
+  <div
+    class="relative min-h-screen flex flex-col sm:justify-center items-center bg-gray-100 p-28"
+  >
+    <div class="relative lg:max-w-5xl w-full">
+      <div
+        class="card bg-pink-200 shadow-lg w-full h-full rounded-3xl absolute transform -rotate-6"
+      ></div>
+      <div
+        class="card bg-pink-700 shadow-lg w-full h-full rounded-3xl absolute transform rotate-6"
+      ></div>
+      <div class="relative w-full rounded-3xl px-6 py-4 bg-gray-100 shadow-md">
+        <h1 class="block mt-3 text-2xl text-gray-700 text-center">
+          Reset Password :-
+        </h1>
+        @if ( step == 1 ) {
+        <form
+          [formGroup]="fogotPassForm"
+          (ngSubmit)="fogotPass()"
+          class="mt-10"
+        >
+          <div class="mt-7">
+            <label for="email" class="block text-lg font-medium text-black"
+              >Email :</label
+            >
+            <input
+              formControlName="email"
+              type="email"
+              id="email"
+              placeholder="Email"
+              class="mt-1 block w-full border-none bg-gray-100 h-11 rounded-xl shadow-lg focus:ring-0"
+            />
+          </div>
+
+          <div class="mt-7">
+            <button
+              [disabled]="isLoding"
+              class="bg-pink-600 mx-auto py-3 px-2 block rounded-xl text-white shadow-xl hover:shadow-inner focus:outline-none transition duration-500 ease-in-out transform hover:-translate-x hover:scale-105 disabled:bg-pink-200 disabled:cursor-default"
+            >
+              Submit @if (isLoding) {
+              <i class="fa-solid fa-spinner fa-spin"></i>
+              }
+            </button>
+          </div>
+        </form>
+        } @if ( step == 2 ) {
+        <form
+          [formGroup]="verifyCodeForm"
+          (ngSubmit)="verifyCode()"
+          class="mt-10"
+        >
+          <div class="mt-7">
+            <label for="uCode" class="block text-lg font-medium text-black"
+              >Reset Code :</label
+            >
+            <input
+              formControlName="resetCode"
+              type="text"
+              id="uCode"
+              placeholder="Reset Code"
+              class="mt-1 block w-full border-none bg-gray-100 h-11 rounded-xl shadow-lg focus:ring-0"
+            />
+          </div>
+
+          <div class="mt-7">
+            <button
+              [disabled]="isLoding"
+              class="bg-pink-600 mx-auto py-3 px-2 block rounded-xl text-white shadow-xl hover:shadow-inner focus:outline-none transition duration-500 ease-in-out transform hover:-translate-x hover:scale-105 disabled:bg-pink-200 disabled:cursor-default"
+            >
+              Submit @if (isLoding) {
+              <i class="fa-solid fa-spinner fa-spin"></i>
+              }
+            </button>
+          </div>
+        </form>
+        } @if ( step == 3 ) {
+        <form
+          [formGroup]="resetPassForm"
+          (ngSubmit)="resetPass()"
+          class="mt-10"
+        >
+          <div class="mt-7">
+            <label for="uEmail" class="block text-lg font-medium text-black"
+              >Email :</label
+            >
+            <input
+              readonly
+              formControlName="email"
+              type="email"
+              id="uEmail"
+              placeholder="Email"
+              class="mt-1 block w-full border-none bg-gray-100 h-11 rounded-xl shadow-lg focus:ring-0"
+            />
+            <div class="mt-7">
+              <label for="password" class="block text-lg font-medium text-black"
+                >New Password :</label
+              >
+              <input
+                formControlName="newPassword"
+                type="password"
+                id="password"
+                placeholder="New Password"
+                class="mt-1 block w-full border-none bg-gray-100 h-11 rounded-xl shadow-lg focus:ring-0"
+              />
+            </div>
+          </div>
+
+         
+  
+
+          <div class="mt-7">
+            <button
+              [disabled]="isLoding"
+              class="bg-pink-600 mx-auto py-3 px-2 block rounded-xl text-white shadow-xl hover:shadow-inner focus:outline-none transition duration-500 ease-in-out transform hover:-translate-x hover:scale-105 disabled:bg-pink-200 disabled:cursor-default"
+            >
+              Submit @if (isLoding) {
+              <i class="fa-solid fa-spinner fa-spin"></i>
+              }
+            </button>
+          </div>
+        </form>
+        }
+      </div>
+    </div>
+  </div>
+</div>
