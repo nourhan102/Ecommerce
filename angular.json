@@ -22,6 +22,7 @@
             "browser": "src/main.ts",
             "polyfills": ["zone.js"],
             "tsConfig": "tsconfig.app.json",
+            "prerender": false,
             "inlineStyleLanguage": "scss",
             "assets": [
               {
@@ -56,9 +57,7 @@
                   "maximumError": "8kB"
                 }
               ],
-              "outputHashing": "all",
-              "prerender": false
-            },
+              "outputHashing": "all"            },
             "development": {
               "optimization": false,
               "extractLicenses": false,
